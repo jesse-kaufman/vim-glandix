@@ -1,5 +1,7 @@
 # gLaNDix Color Scheme
 
+**Requires a terminal with full color support** (`:set termguicolors`)
+
 *Initially based on files from the "dim" colorscheme*
 
 ## Installation
