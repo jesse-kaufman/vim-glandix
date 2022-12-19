@@ -1,6 +1,6 @@
 # gLaNDix Color Scheme
 
-**Initially based on files from the "dim" colorscheme**
+*Initially based on files from the "dim" colorscheme*
 
 ## Installation
 ### Using plug.vim
