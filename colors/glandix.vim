@@ -11,7 +11,6 @@ let white    = "#eaeaea"
 let cyan     = "#80e8ff"
 let magenta  = "#ef6bff"
 let blue     = "#3879d8"
-let dkblue   = "#5174a6"
 let yellow   = "#fecb2f"
 let ltgreen  = "#69ea4d"
 let ltred    = "#fa5a1f"
@@ -29,7 +28,7 @@ let black    = "#000000"
 highlight  glxWhiteFG     ctermfg=15      guifg=white
 highlight  glxCyanFG      ctermfg=14      guifg=cyan
 highlight  glxMagentaFG   ctermfg=13      guifg=magenta
-highlight  glxDkBlueFG    ctermfg=12      guifg=dkblue
+highlight  glxDkBlueFG    ctermfg=12      guifg=#4a6fa5
 highlight  glxYellowFG    ctermfg=11      guifg=yellow
 highlight  glxLtGreenFG   ctermfg=10      guifg=ltgreen
 highlight  glxLtRedFG     ctermfg=9       guifg=ltred
@@ -46,7 +45,7 @@ highlight  glxDkGrayFG    ctermfg=0       guifg=dkgray
 highlight  glxWhiteBG     ctermbg=15      guibg=white
 highlight  glxCyanBG      ctermbg=14      guibg=cyan
 highlight  glxMagentaBG   ctermbg=13      guibg=magenta
-highlight  glxDkBlueBG    ctermbg=12      guibg=dkblue
+highlight  glxDkBlueBG    ctermbg=12      guibg=#4a6fa5
 highlight  glxYellowBG    ctermbg=11      guibg=yellow
 highlight  glxLtGreenBG   ctermbg=10      guibg=ltgreen
 highlight  glxLtRedBG     ctermbg=9       guibg=ltred
@@ -72,7 +71,7 @@ highlight  PmenuThumb     guibg=#323232  ctermbg=0
 highlight  Pmenu        ctermfg=15   ctermbg=8
 highlight  PmenuSel       guifg=#525252  guibg=#eaeaea  ctermfg=8   ctermbg=15
 highlight  WildMenu       guifg=#323232  guibg=#1ea50b  ctermfg=0   ctermbg=10
-highlight  ErrorMsg       guifg=#ffffff  guibg=#ef4335  ctermfg=15  ctermbg=1
+highlight  ErrorMsg       guifg=#ffffff  guibg=#ef4335  ctermfg=15  ctermbg=1 cterm=underline
 highlight  Conceal        guifg=#bfbfbf  guibg=#bfbfbf  ctermfg=7   ctermbg=7
 highlight  TabLine        guifg=#323232  guibg=#bfbfbf  ctermfg=0   ctermbg=7   cterm=underline
 highlight  MatchParen     guifg=#80e8ff  ctermbg=14
@@ -84,7 +83,9 @@ highlight  Statement      guifg=#fc8a25  ctermfg=3
 highlight  PreProc        guifg=#ae50b9  ctermfg=5
 highlight  Type           guifg=#1ea50b  ctermfg=2
 highlight  Ignore         guifg=#eaeaea  ctermfg=15
+highlight  NonText        guifg=#323232  ctermfg=0
 highlight  Todo           guifg=#323232  guibg=#fecb2f  ctermfg=0   ctermbg=11
+highlight  Conceal        ctermfg=0 ctermbg=0 guifg=#323232 guibg=#323232
 highlight  ModeMsg        cterm=bold
 highlight  TabLineSel     cterm=bold
 highlight  TabLineFill    cterm=reverse gui=reverse
@@ -92,6 +93,15 @@ highlight  CursorLine     cterm=underline gui=underline
 highlight  TermCursor     guibg=#ffffff guifg=none ctermbg=15
 highlight  IncSearch      cterm=reverse
 highlight  Highlight      cterm=reverse
+
+" Diagnostics Colors
+highlight  DiagnosticUnderlineError guifg=#ffffff guibg=#ef4335 cterm=underline gui=underline
+
+" COC Colors
+highlight  CocFloating           guibg=#323232   ctermbg=0
+highlight  CocErrorHighlight     cterm=underline gui=underline
+highlight! CocErrorFloat         guifg=#ef4335   guibg=#111111   ctermbg=3
+highlight  CocUnusedHighlight    guifg=#323232   guibg=#525252   ctermfg=0   ctermbg=8
 highlight! link CocHighlightText Highlight
 
 " In diffs, added lines are green, changed lines are yellow, deleted lines are
@@ -111,8 +121,8 @@ highlight  Search         ctermfg=0    ctermbg=11
 " columns.
 highlight  LineNr       guifg=#525252  ctermfg=8
 highlight  CursorLineNr guifg=#bfbfbf  ctermfg=7
-highlight  Comment      guifg=#525252  ctermfg=8
-highlight  ColorColumn  guifg=#bfbfbf  guibg=#525252  ctermfg=7   ctermbg=8
+highlight  Comment      guifg=#4a6fa5  ctermfg=12
+highlight  ColorColumn  guibg=#101010  ctermbg=8
 highlight! link FoldColumn ColorColumn
 highlight  SpellCap     ctermfg=7    ctermbg=8
 highlight  StatusLine   ctermfg=15   ctermbg=8    cterm=bold
@@ -125,7 +135,6 @@ highlight  CursorColumn ctermbg=1
 " links
 "
 highlight! link SpecialKey glxDkBlueFG
-highlight! link NonText glxDkBlueFG
 highlight! link Directory glxDkBlueFG
 highlight! link Question glxGreenFG
 highlight! link CursorColumn glxLtGrayFG
