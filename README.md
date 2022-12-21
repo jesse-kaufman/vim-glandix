@@ -1,5 +1,9 @@
 # gLaNDix Color Scheme
 
+**Requires a terminal with full color support** (`:set termguicolors`)
+
+*Initially based on files from the "dim" colorscheme*
+
 ## Installation
 ### Using plug.vim
 Add the following to your Vim/NeoVim config file:
