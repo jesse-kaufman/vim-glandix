@@ -116,6 +116,7 @@ highlight  TabLineFill    guifg=NONE guibg=NONE gui=NONE
 
 " Diagnostics Colors
 highlight! DiagnosticUnderlineError guifg=#ffffff guibg=#ef4335 gui=undercurl
+highlight! DiagnosticUnderlineHint gui=undercurl guisp=White
 highlight  DiagnosticError          guifg=#ef4335
 highlight  DiagnosticVirtualTextError guifg=#525252
 
