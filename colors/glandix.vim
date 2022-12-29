@@ -6,130 +6,154 @@ endif
 
 set background=dark
 let colors_name = "glandix"
+let g:glx_colors_black      = "#101010"
+let g:glx_colors_ltblack    = "#262626"
+let g:glx_colors_dkgray     = "#323232"
+let g:glx_colors_gray       = "#525252"
+let g:glx_colors_ltgray     = "#bfbfbf"
+let g:glx_colors_white      = "#eaeaea"
+let g:glx_colors_teal       = "#008080"
+let g:glx_colors_ltcyan     = "#80e8ff"
+let g:glx_colors_cyan       = "#56bbdc"
+let g:glx_colors_blue       = "#3879d8"
+let g:glx_colors_dkblue     = "#4a6fa5"
+let g:glx_colors_lavendar   = "#a9a1e1"
+let g:glx_colors_magenta    = "#c678dd"
+let g:glx_colors_ltred      = "#ec5f67"
+let g:glx_colors_red        = "#ef4335"
+let g:glx_colors_dkorange   = "#fa5a1f"
+let g:glx_colors_orange     = "#fc8a25"
+let g:glx_colors_yellow     = "#fecb2f"
+let g:glx_colors_ltgreen    = "#98be65"
+let g:glx_colors_green      = "#1ea50b"
 
-let white    = "#eaeaea"
-let cyan     = "#80e8ff"
-let magenta  = "#ef6bff"
-let blue     = "#3879d8"
-let yellow   = "#fecb2f"
-let ltgreen  = "#69ea4d"
-let ltred    = "#fa5a1f"
-let gray     = "#525252"
-let ltgray   = "#bfbfbf"
-let dkcyan   = "#56bbdc"
-let lavendar = "#ae50b9"
-let orange   = "#fc8a25"
-let green    = "#1ea50b"
-let red      = "#ef4335"
-let dkgray   = "#323232"
-let black    = "#000000"
+let g:glx_colors_lualine_bg = "#202328"
+let g:glx_colors_lualine_fg = "#bbc2cf"
 
-" Default colors
-highlight  glxWhiteFG     ctermfg=15      guifg=white
-highlight  glxCyanFG      ctermfg=14      guifg=cyan
-highlight  glxMagentaFG   ctermfg=13      guifg=magenta
-highlight  glxDkBlueFG    ctermfg=12      guifg=#4a6fa5
-highlight  glxYellowFG    ctermfg=11      guifg=yellow
-highlight  glxLtGreenFG   ctermfg=10      guifg=ltgreen
-highlight  glxLtRedFG     ctermfg=9       guifg=ltred
-highlight  glxGrayFG      ctermfg=8       guifg=gray
-highlight  glxLtGrayFG    ctermfg=7       guifg=ltgray
-highlight  glxDkCyanFG    ctermfg=6       guifg=dkcyan
-highlight  glxLavenderFG  ctermfg=5       guifg=lavendar
-highlight  glxBlueFG      ctermfg=4       guifg=blue
-highlight  glxOrangeFG    ctermfg=3       guifg=orange
-highlight  glxGreenFG     ctermfg=2       guifg=green
-highlight  glxRedFG       ctermfg=1       guifg=red
-highlight  glxDkGrayFG    ctermfg=0       guifg=dkgray
+" Theme FG colors
+highlight  glxBlackFG     guifg=#101010
+highlight  glxLtBlackFG   guifg=#262626
+highlight  glxDkGrayFG    guifg=#323232
+highlight  glxGrayFG      guifg=#525252
+highlight  glxLtGrayFG    guifg=#bfbfbf
+highlight  glxWhiteFG     guifg=#eaeaea
+highlight  glxTealFG      guifg=#008080
+highlight  glxLtCyanFG    guifg=#80e8ff
+highlight  glxCyanFG      guifg=#56bbdc
+highlight  glxBlueFG      guifg=#3879d8
+highlight  glxDkBlueFG    guifg=#4a6fa5
+highlight  glxLavenderFG  guifg=#a9a1e1
+highlight  glxMagentaFG   guifg=#c678dd
+highlight  glxLtRedFG     guifg=#ec5f67
+highlight  glxRedFG       guifg=#ef4335
+highlight  glxDkOrangeFG  guifg=#fa5a1f
+highlight  glxOrangeFG    guifg=#fc8a25
+highlight  glxYellowFG    guifg=#fecb2f
+highlight  glxLtGreenFG   guifg=#98be65
+highlight  glxGreenFG     guifg=#1ea50b
 
-highlight  glxWhiteBG     ctermbg=15      guibg=white
-highlight  glxCyanBG      ctermbg=14      guibg=cyan
-highlight  glxMagentaBG   ctermbg=13      guibg=magenta
-highlight  glxDkBlueBG    ctermbg=12      guibg=#4a6fa5
-highlight  glxYellowBG    ctermbg=11      guibg=yellow
-highlight  glxLtGreenBG   ctermbg=10      guibg=ltgreen
-highlight  glxLtRedBG     ctermbg=9       guibg=ltred
-highlight  glxGrayBG      ctermbg=8       guibg=gray
-highlight  glxLtGrayBG    ctermbg=7       guibg=ltgray
-highlight  glxDkCyanBG    ctermbg=6       guibg=dkcyan
-highlight  glxLavenderBG  ctermbg=5       guibg=lavendar
-highlight  glxBlueBG      ctermbg=4       guibg=blue
-highlight  glxOrangeBG    ctermbg=3       guibg=orange
-highlight  glxGreenBG     ctermbg=2       guibg=green
-highlight  glxRedBG       ctermbg=1       guibg=red
-highlight  glxDkGrayBG    ctermbg=0       guibg=dkgray
+" Theme FG colors
+highlight  glxBlackBG     guibg=#101010
+highlight  glxLtBlackBG   guibg=#262626
+highlight  glxDkGrayBG    guibg=#323232
+highlight  glxGrayBG      guibg=#525252
+highlight  glxLtGrayBG    guibg=#bfbfbf
+highlight  glxWhiteBG     guibg=#eaeaea
+highlight  glxDkCyanBG    guibg=#008080
+highlight  glxCyanBG      guibg=#80e8ff
+highlight  glxMedCyanBG   guibg=#56bbdc
+highlight  glxDkBlueBG    guibg=#4a6fa5
+highlight  glxBlueBG      guibg=#3879d8
+highlight  glxLavenderBG  guibg=#a9a1e1
+highlight  glxMagentaBG   guibg=#c678dd
+highlight  glxRedBG       guibg=#ef4335
+highlight  glxLtRedBG     guibg=#ec5f67
+highlight  glxLtRedBG     guibg=#fa5a1f
+highlight  glxOrangeBG    guibg=#fc8a25
+highlight  glxYellowBG    guibg=#fecb2f
+highlight  glxGreenBG     guibg=#1ea50b
+highlight  glxLtGreenBG   guibg=#98be65
 
 
-highlight  MoreMsg        guifg=#1ea50b  ctermfg=2
-highlight  Title          guifg=#ae50b9  ctermfg=5
-highlight  WarningMsg     guifg=#ef4335  ctermfg=1
-highlight  SpellBad       guibg=#fa5a1f  ctermbg=9
-highlight  SpellRare      guibg=#ef6bff  ctermbg=13
-highlight  SpellLocal     guibg=#80e8ff  ctermbg=14
-highlight  PmenuSbar      guibg=#525252  ctermbg=8
-highlight  PmenuThumb     guibg=#323232  ctermbg=0
-highlight  Pmenu        ctermfg=15   ctermbg=8
-highlight  PmenuSel       guifg=#525252  guibg=#eaeaea  ctermfg=8   ctermbg=15
-highlight  WildMenu       guifg=#323232  guibg=#1ea50b  ctermfg=0   ctermbg=10
-highlight  ErrorMsg       guifg=#ffffff  guibg=#ef4335  ctermfg=15  ctermbg=1 cterm=underline
-highlight  Conceal        guifg=#bfbfbf  guibg=#bfbfbf  ctermfg=7   ctermbg=7
-highlight  TabLine        guifg=#323232  guibg=#bfbfbf  ctermfg=0   ctermbg=7   cterm=underline
-highlight  MatchParen     guifg=#80e8ff  ctermbg=14
-highlight  Constant       guifg=#ef4335  ctermfg=1
-highlight  Special        guifg=#ae50b9  ctermfg=5
-highlight  Identifier     guifg=#56bbdc  ctermfg=6
-highlight  Underlined     guifg=#ae50b9  ctermfg=5       cterm=underline
-highlight  Statement      guifg=#fc8a25  ctermfg=3
-highlight  PreProc        guifg=#ae50b9  ctermfg=5
-highlight  Type           guifg=#1ea50b  ctermfg=2
-highlight  Ignore         guifg=#eaeaea  ctermfg=15
-highlight  NonText        guifg=#323232  ctermfg=0
-highlight  Todo           guifg=#323232  guibg=#fecb2f  ctermfg=0   ctermbg=11
-highlight  Conceal        ctermfg=0 ctermbg=0 guifg=#323232 guibg=#323232
-highlight  ModeMsg        cterm=bold
-highlight  TabLineSel     cterm=bold
-highlight  TabLineFill    cterm=reverse gui=reverse
-highlight  CursorLine     cterm=underline gui=underline
-highlight  TermCursor     guibg=#ffffff guifg=none ctermbg=15
-highlight  IncSearch      cterm=reverse
-highlight  Highlight      cterm=reverse
+
+
+highlight  MoreMsg        guifg=#1ea50b
+highlight  Title          guifg=#c678dd
+highlight  WarningMsg     guifg=#ef4335
+highlight  SpellBad       guibg=#fa5a1f
+highlight  SpellRare      guibg=#c678dd
+highlight  SpellLocal     guibg=#80e8ff
+highlight  PmenuSbar      guibg=#525252
+highlight  PmenuThumb     guibg=#525252
+highlight  Pmenu          guibg=NONE  guifg=#eaeaea
+highlight  PmenuSel       guibg=#525252  guifg=#eaeaea
+highlight  WildMenu       guifg=#525252  guibg=#1ea50b
+highlight  ErrorMsg       guifg=#ffffff  guibg=#ef4335
+highlight  Conceal        guifg=#bfbfbf  guibg=#bfbfbf
+highlight  MatchParen     guifg=#ffffff guibg=NONE     gui=underline
+highlight  Constant       guifg=#ef4335
+highlight  Special        guifg=#fc8a25
+highlight  Identifier     guifg=#56bbdc
+highlight  Underlined     guifg=#c678dd gui=underline
+highlight  Statement      guifg=#fc8a25
+" execute 'highlight  Keyword        guifg=' . g:glx_colors_green
+highlight  PreProc        guifg=#c678dd
+highlight  Type           guifg=#1ea50b
+highlight  Ignore         guifg=#eaeaea
+highlight  NonText        guifg=#323232
+highlight  Todo           guifg=#323232  guibg=#fecb2f
+highlight  Conceal        guifg=#323232 guibg=#323232
+highlight  ModeMsg        gui=bold
+highlight  CursorLine     guibg=NONE gui=underline
+highlight  TermCursor     guibg=#000000 guifg=#ffffff gui=NONE
+highlight  IncSearch      gui=reverse
+highlight  Highlight      gui=reverse
+
+" Tabs
+highlight  TabLine        guifg=#525252  guibg=#222222 gui=NONE
+highlight  TabLineSel     guifg=#bfbfbf  guibg=#323232
+highlight  TabLineFill    guifg=NONE guibg=NONE gui=NONE
 
 " Diagnostics Colors
-highlight  DiagnosticUnderlineError guifg=#ffffff guibg=#ef4335 cterm=underline gui=underline
-
-" COC Colors
-highlight  CocFloating           guibg=#323232   ctermbg=0
-highlight  CocErrorHighlight     cterm=underline gui=underline
-highlight! CocErrorFloat         guifg=#ef4335   guibg=#111111   ctermbg=3
-highlight  CocUnusedHighlight    guifg=#323232   guibg=#525252   ctermfg=0   ctermbg=8
-highlight! link CocHighlightText Highlight
+highlight! DiagnosticUnderlineError guifg=#ffffff guibg=#ef4335 gui=undercurl
+highlight  DiagnosticError          guifg=#ef4335
+highlight  DiagnosticVirtualTextError guifg=#525252
 
 " In diffs, added lines are green, changed lines are yellow, deleted lines are
 " red, and changed text (within a changed line) is bright yellow and bold.
-highlight  DiffAdd        ctermfg=0    ctermbg=2   guifg=#000000  guibg=#1ea50b
-highlight  DiffChange     ctermfg=0    ctermbg=3   guifg=#000000  guibg=#fc8a25
-highlight  DiffDelete     ctermfg=0    ctermbg=1   guifg=#000000  guibg=#ef4335
-highlight  DiffText       ctermfg=0    ctermbg=11  guifg=#000000  guibg=#fecb2f  cterm=bold
+highlight  DiffAdd     guifg=#000000  guibg=#1ea50b
+highlight  DiffChange  guifg=#000000  guibg=#fc8a25
+highlight  DiffDelete  guifg=#000000  guibg=#ef4335
+highlight  DiffText    guifg=#000000  guibg=#fecb2f
 
-" Invert selected lines in visual mode
-highlight  Visual         ctermfg=NONE ctermbg=NONE cterm=inverse
+" Selected lines in visual mode
+" execute 'highlight  Visual         gui=inverse guibg=' . g:glx_colors_black
+execute 'highlight! Visual         guibg=' . g:glx_colors_dkgray
 
 " Highlight search matches in black, with a yellow background
-highlight  Search         ctermfg=0    ctermbg=11
+highlight  Search         guifg=#101010 guibg=#fecb2f
 
 " Dim line numbers, comments, color columns, the status line, splits and sign
 " columns.
-highlight  LineNr       guifg=#525252  ctermfg=8
-highlight  CursorLineNr guifg=#bfbfbf  ctermfg=7
-highlight  Comment      guifg=#4a6fa5  ctermfg=12
-highlight  ColorColumn  guibg=#101010  ctermbg=8
+highlight  LineNr       guifg=#525252
+highlight  CursorLineNr guifg=#bfbfbf
+highlight  Comment      guifg=#4a6fa5
+highlight  ColorColumn  guibg=#101010
 highlight! link FoldColumn ColorColumn
-highlight  SpellCap     ctermfg=7    ctermbg=8
-highlight  StatusLine   ctermfg=15   ctermbg=8    cterm=bold
-highlight  StatusLineNC ctermfg=7    ctermbg=8    cterm=NONE
-highlight  VertSplit    ctermfg=7    ctermbg=8    cterm=NONE
-highlight  SignColumn                ctermbg=8
-highlight  CursorColumn ctermbg=1
+" highlight  SpellCap
+" highlight  StatusLine
+" highlight  StatusLineNC
+" highlight  VertSplit
+" highlight  SignColumn
+
+" Lualine colors
+highlight!  lualine_c_filename_normal guifg=#98be65
+highlight!  lualine_c_filename_insert guifg=#ef4335
+highlight!  lualine_c_filename_visual guifg=#4a6fa5
+highlight!  lualine_c_filename_replace guifg=#fc8a25
+highlight!  lualine_c_filename_command guifg=#c678dd
+highlight!  lualine_c_filename_terminal guifg=#80e8ff
+highlight!  lualine_c_filename_inactive guifg=#eaeaea
 
 "
 " links
@@ -146,10 +170,14 @@ highlight  link DimFzfFgPlus PmenuSel
 highlight  link DimFzfBgPlus PmenuSel
 highlight  link DimFzfInfo   Comment
 
-highlight  DimFzfHl      ctermfg=2
-highlight  DimFzfPrompt  ctermfg=12
-highlight  DimFzfPointer ctermfg=1
-highlight  DimFzfMarker  ctermfg=9
+highlight! link phpSuperglobals Identifier
+highlight! link phpFunction Identifier
+highlight! link phpFunctions Identifier
+
+" highlight  DimFzfHl
+" highlight  DimFzfPrompt
+" highlight  DimFzfPointer
+" highlight  DimFzfMarker
 
 let g:fzf_colors = { 'fg':      ['fg', 'DimFzfFg'],
                    \ 'bg':      ['bg', 'DimFzfBg'],
@@ -161,3 +189,46 @@ let g:fzf_colors = { 'fg':      ['fg', 'DimFzfFg'],
                    \ 'prompt':  ['fg', 'DimFzfPrompt'],
                    \ 'pointer': ['fg', 'DimFzfPointer'],
                    \ 'marker':  ['fg', 'DimFzfMarker']}
+
+execute 'highlight! MoreMsg guibg=NONE guifg=' . g:glx_colors_ltgreen
+
+" nvim-cmp colors
+" cmp deprecated
+execute 'highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=' . g:glx_colors_gray
+
+" cmp item match
+execute 'highlight CmpItemAbbrMatch gui=underline guifg=' . g:glx_colors_dkorange
+highlight! link CmpItemAbbrMatchFuzzy CmpItemAbbrMatch
+
+" cmp function
+highlight! link CmpItemKindFunction PreProc
+highlight! link CmpItemKindMethod PreProc
+
+" cmp keyword
+highlight! link CmpItemKindKeyword Keyword
+highlight! link CmpItemKindProperty CmpItemKindKeyword
+highlight! link CmpItemKindUnit CmpItemKindKeyword
+highlight! link CmpItemKindConstant Constant
+execute 'highlight! CmpItemKindText guifg=' . g:glx_colors_gray
+execute 'highlight! CmpItemKindModule guifg=' . g:glx_colors_ltgreen
+execute 'highlight! CmpItemKindSnippet guifg=' . g:glx_colors_lualine_fg
+execute 'highlight! CmpItemKindClass guifg=' . g:glx_colors_ltgreen
+execute 'highlight! CmpItemKindInterface guifg=' . g:glx_colors_ltgreen
+execute 'highlight! CmpItemKindEnumMember guifg=' . g:glx_colors_ltgreen
+execute 'highlight! CmpItemMenu guifg=' . g:glx_colors_dkgray
+
+
+" cmp variable
+highlight! link CmpItemKindVariable Identifier
+highlight! link CmpItemKindProperty Identifier
+
+" cmp struct
+highlight! link CmpItemKindStruct Statment
+
+" Lspsaga colors
+execute 'highlight! ColInLineDiagnostic guibg=NONE guifg=' . g:glx_colors_gray
+execute 'highlight! LspSagaDiagnosticSource guibg=NONE guifg=' . g:glx_colors_gray
+execute 'highlight! LspInfoTip guibg=NONE guifg=' . g:glx_colors_gray
+execute 'highlight! LspSagaDiagnosticBorder guibg=NONE guifg=' . g:glx_colors_gray
+execute 'highlight! LspSagaDiagnosticHeader guibg=NONE guifg=' . g:glx_colors_gray
+execute 'highlight! LspSagaLightBulb guibg=NONE guifg=' . g:glx_colors_yellow
