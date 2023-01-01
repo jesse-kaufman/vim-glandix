@@ -7,6 +7,7 @@ endif
 set background=dark
 let colors_name = "glandix"
 let g:glx_colors_black      = "#101010"
+let g:glx_colors_black      = "#121212"
 let g:glx_colors_ltblack    = "#262626"
 let g:glx_colors_dkgray     = "#323232"
 let g:glx_colors_gray       = "#525252"
@@ -15,6 +16,7 @@ let g:glx_colors_white      = "#eaeaea"
 let g:glx_colors_teal       = "#008080"
 let g:glx_colors_ltcyan     = "#80e8ff"
 let g:glx_colors_cyan       = "#56bbdc"
+let g:glx_colors_ltblue     = "#5b8dd8"
 let g:glx_colors_blue       = "#3879d8"
 let g:glx_colors_dkblue     = "#4a6fa5"
 let g:glx_colors_lavendar   = "#a9a1e1"
@@ -29,6 +31,7 @@ let g:glx_colors_green      = "#1ea50b"
 
 let g:glx_colors_lualine_bg = "#202328"
 let g:glx_colors_lualine_fg = "#bbc2cf"
+"rgb(37, 150, 190)
 
 " Theme FG colors
 highlight  glxBlackFG     guifg=#101010
@@ -77,8 +80,6 @@ highlight  glxLtGreenBG   guibg=#98be65
 
 
 
-highlight  MoreMsg        guifg=#1ea50b
-highlight  Title          guifg=#c678dd
 highlight  WarningMsg     guifg=#ef4335
 highlight  SpellBad       guibg=#fa5a1f
 highlight  SpellRare      guibg=#c678dd
@@ -88,9 +89,24 @@ highlight  PmenuThumb     guibg=#525252
 highlight  Pmenu          guibg=NONE  guifg=#eaeaea
 highlight  PmenuSel       guibg=#525252  guifg=#eaeaea
 highlight  WildMenu       guifg=#525252  guibg=#1ea50b
-highlight  ErrorMsg       guifg=#ffffff  guibg=#ef4335
+highlight  ErrorMsg       guifg=#ffffff  guibg=#ef4335 gui=bold
+execute 'highlight  Title  gui=bold        guifg=' . g:glx_colors_dkblue
+execute 'highlight! HealthSuccess  gui=bold guifg=' . g:glx_colors_ltgreen
+execute 'highlight  PlugName       gui=bold guifg=' . g:glx_colors_ltgreen
+execute 'highlight! PlugH2       gui=bold guifg=' . g:glx_colors_ltgreen
+execute 'highlight! PlugBracket       guifg=' . g:glx_colors_ltgray
+highlight  PlugNumber     guifg=#fecb2f  gui=bold
+execute 'highlight  PlugMessage    gui=bold guifg=' . g:glx_colors_lualine_fg
+highlight  PlugPlus       guifg=#bfbfbf  gui=NONE
+highlight  PlugDash       guifg=#bfbfbf  gui=NONE
+highlight  PlugStar       guifg=#bfbfbf  gui=NONE
+highlight  PlugUpdate     guifg=#fc8a25  gui=bold
+" highlight  PlugX          guifg=#c678dd gui=bold
+execute 'highlight  Plug1          gui=bold guifg=' . g:glx_colors_lualine_fg
+execute 'highlight  Plug2          guifg=' . g:glx_colors_gray
+highlight  WarningMsg     guifg=#fecb2f  gui=bold
 highlight  Conceal        guifg=#bfbfbf  guibg=#bfbfbf
-highlight  MatchParen     guifg=#ffffff guibg=NONE     gui=underline
+highlight  MatchParen     guifg=#ffffff  guibg=NONE     gui=underline
 highlight  Constant       guifg=#ef4335
 highlight  Special        guifg=#fc8a25
 highlight  Identifier     guifg=#56bbdc
@@ -101,21 +117,24 @@ highlight  PreProc        guifg=#c678dd
 highlight  Type           guifg=#1ea50b
 highlight  Ignore         guifg=#eaeaea
 highlight  NonText        guifg=#323232
-highlight  Todo           guifg=#323232  guibg=#fecb2f
+highlight  Todo           gui=bold guifg=#323232  guibg=#fecb2f
 highlight  Conceal        guifg=#323232 guibg=#323232
 highlight  ModeMsg        gui=bold
-highlight  CursorLine     guibg=NONE gui=underline
 highlight  TermCursor     guibg=#000000 guifg=#ffffff gui=NONE
-highlight  IncSearch      gui=reverse
 highlight  Highlight      gui=reverse
 
+" Cursor line
+execute 'highlight  CursorLine   guibg=' . g:glx_colors_ltblack
+execute 'highlight  CursorLineNr guibg=' . g:glx_colors_lualine_bg . ' guifg=#ccccff'
+" execute 'highlight  CursorLineNr guibg=' . g:glx_colors_lualine_bg . ' guifg=' . g:glx_colors_lualine_fg
+
 " Tabs
-highlight  TabLine        guifg=#525252  guibg=#222222 gui=NONE
+highlight  TabLine        guifg=#525252  guibg=#262626 gui=NONE
 highlight  TabLineSel     guifg=#bfbfbf  guibg=#323232
 highlight  TabLineFill    guifg=NONE guibg=NONE gui=NONE
 
 " Diagnostics Colors
-highlight! DiagnosticUnderlineError guifg=#ffffff guibg=#ef4335 gui=undercurl
+highlight! DiagnosticUnderlineError gui=undercurl
 highlight! DiagnosticUnderlineHint gui=undercurl guisp=White
 highlight  DiagnosticError          guifg=#ef4335
 highlight  DiagnosticVirtualTextError guifg=#525252
@@ -128,16 +147,15 @@ highlight  DiffDelete  guifg=#000000  guibg=#ef4335
 highlight  DiffText    guifg=#000000  guibg=#fecb2f
 
 " Selected lines in visual mode
-" execute 'highlight  Visual         gui=inverse guibg=' . g:glx_colors_black
+" execute 'highlight!  Visual         gui=inverse guibg=' . g:glx_colors_black
 execute 'highlight! Visual         guibg=' . g:glx_colors_dkgray
 
-" Highlight search matches in black, with a yellow background
-highlight  Search         guifg=#101010 guibg=#fecb2f
+execute 'highlight  IncSearch         guifg=#101010 guibg=' . g:glx_colors_yellow . ' gui=underline'
+execute 'highlight  Search         guifg=#101010 guibg=' . g:glx_colors_ltgreen . ' gui=underline'
 
 " Dim line numbers, comments, color columns, the status line, splits and sign
-" columns.
+" columns.ckg
 highlight  LineNr       guifg=#525252
-highlight  CursorLineNr guifg=#bfbfbf
 highlight  Comment      guifg=#4a6fa5
 highlight  ColorColumn  guibg=#101010
 highlight! link FoldColumn ColorColumn
