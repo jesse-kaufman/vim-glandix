@@ -141,6 +141,9 @@ highlight  TermCursor     guibg=#000000 guifg=#ffffff gui=NONE
 highlight  Highlight      gui=reverse
 
 execute 'highlight  YankHighlight  guifg=' . g:glx_c_lualine_fg . '  guibg=' . g:glx_c_lualine_ltbg
+execute 'highlight  LspReferenceRead guifg=' . g:glx_c_lualine_fg . '  guibg=' . g:glx_c_lualine_ltbg
+execute 'highlight  LspReferenceText guifg=' . g:glx_c_lualine_fg . '  guibg=' . g:glx_c_lualine_ltbg
+execute 'highlight  LspReferenceWrite guifg=' . g:glx_c_lualine_fg . '  guibg=' . g:glx_c_lualine_ltbg
 highlight TitleString guibg=none
 highlight TitleIcon guibg=none
 
