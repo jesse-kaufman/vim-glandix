@@ -29,6 +29,7 @@ let g:glx_c_orange     = "#fc8a25"
 let g:glx_c_yellow     = "#fecb2f"
 let g:glx_c_ltgreen    = "#98be65"
 let g:glx_c_green      = "#1ea50b"
+let g:glx_c_dkgreen    = "#157108"
 
 let g:glx_c_lualine_bg = "#202328"
 let g:glx_c_lualine_ltbg = "#2F333B"
