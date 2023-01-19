@@ -31,6 +31,8 @@ let g:glx_c_ltgreen    = "#98be65"
 let g:glx_c_green      = "#1ea50b"
 
 let g:glx_c_lualine_bg = "#202328"
+let g:glx_c_lualine_ltbg = "#2F333B"
+let g:glx_c_lualine_dkbg = "#16191C"
 let g:glx_c_lualine_fg = "#bbc2cf"
 
 
@@ -54,8 +56,8 @@ augroup END
 highlight  glxBlackFG     guifg=#101010
 highlight  glxLtBlackFG   guifg=#262626
 highlight  glxDkGrayFG    guifg=#323232
-highlight  glxGrayFG      guifg=#525252
-highlight  glxLtGrayFG    guifg=#bfbfbf
+highlight  GlxGrayFG      guifg=#525252
+execute 'highlight  glxLtGrayFG    guifg=' . g:glx_c_ltgray
 highlight  glxWhiteFG     guifg=#eaeaea
 highlight  glxTealFG      guifg=#008080
 highlight  glxLtCyanFG    guifg=#80e8ff
@@ -95,7 +97,7 @@ highlight  glxGreenBG     guibg=#1ea50b
 highlight  glxLtGreenBG   guibg=#98be65
 
 
-" highlight  Normal guifg=#eaeaea guibg=#151515
+" execute 'highlight  NormalFloat guifg=' . g:glx_c_lualine_fg . ' guibg=' . g:glx_c_black . ' blend=80'
 highlight  WarningMsg     guifg=#ef4335
 highlight  SpellBad       guibg=#fa5a1f
 highlight  SpellRare      guibg=#c678dd
@@ -137,30 +139,71 @@ highlight  ModeMsg        gui=bold
 highlight  TermCursor     guibg=#000000 guifg=#ffffff gui=NONE
 highlight  Highlight      gui=reverse
 
+execute 'highlight  YankHighlight  guifg=' . g:glx_c_lualine_fg . '  guibg=' . g:glx_c_lualine_ltbg
+highlight TitleString guibg=none
+highlight TitleIcon guibg=none
+
 " Cursor line
-execute 'highlight! CursorLine   guibg=' . g:glx_c_lualine_bg
-execute 'highlight! CursorLineNr guibg=' . g:glx_c_lualine_bg . ' guifg=#bfbfbf'
+execute 'highlight! CursorLine   guibg=' . g:glx_c_lualine_dkbg
+execute 'highlight! CursorLineNr guibg=' . g:glx_c_lualine_dkbg . ' guifg=#bfbfbf'
+execute 'highlight! CursorLineSign guibg=' . g:glx_c_lualine_dkbg . ' guifg=#bfbfbf'
 
 " Indent Blankline context line
 execute 'highlight  IndentBlanklineContextChar  gui=bold guifg=' . g:glx_c_dkblue
 
-
+"
 " Tabs
-highlight  TabLine        guifg=#525252  guibg=#262626 gui=NONE
-highlight  TabLineSel     guifg=#bfbfbf  guibg=#323232
-highlight  TabLineFill    guifg=NONE guibg=NONE gui=NONE
+"
+
+" ??
+" execute 'highlight! BufferLineTab guifg=' . g:glx_c_gray . ' guibg=' . g:glx_c_lualine_dkbg
+
+" Main tabline background. ??
+" execute 'highlight! BufferLineFill guibg=black guifg=' . g:glx_c_gray
+
+" execute 'highlight! BufferLineSeparator guibg=' . g:glx_c_lualine_dkbg
+
+" ??
+" execute 'highlight! BufferLineBufferVisible guifg=' . g:glx_c_gray
+
+" Inactive tabs.
+" execute 'highlight! BufferLineBackground guifg=' . g:glx_c_gray . ' guibg=' . g:glx_c_lualine_dkbg
+
+" Active tab.
+" execute 'highlight! BufferLineBufferSelected gui=bold guifg=' . g:glx_c_lualine_fg . ' guibg=' . g:glx_c_lualine_bg
+
+" Active tab indicator.
+" execute 'highlight! BufferLineIndicatorSelected guifg=' . g:glx_c_ltgreen . ' guibg=' . g:glx_c_lualine_bg
+
+
+execute 'highlight! TabLine        gui=none  guifg=' . g:glx_c_gray . '  guibg=' . g:glx_c_lualine_bg
+execute 'highlight! TabLineSel     gui=none  guifg=' . g:glx_c_lualine_fg . '  guibg=' . g:glx_c_black
+execute 'highlight! TabLineFill    gui=none  guibg=' . g:glx_c_lualine_bg . '  guibg=' . g:glx_c_ltgreen
 
 " In diffs, added lines are green, changed lines are yellow, deleted lines are
 " red, and changed text (within a changed line) is bright yellow and bold.
-highlight  DiffAdd     guifg=#000000  guibg=#1ea50b
-highlight  DiffChange  guifg=#000000  guibg=#fc8a25
-highlight  DiffDelete  guifg=#000000  guibg=#ef4335
-highlight  DiffText    guifg=#000000  guibg=#fecb2f
+execute 'highlight  diffAdded     guifg=' . g:glx_c_green
+execute 'highlight  diffRemoved  guifg=' . g:glx_c_red
+execute 'highlight  diffOldFile  gui=NONE guifg=' . g:glx_c_red
+execute 'highlight  diffNewFile  gui=NONE guifg=' . g:glx_c_green
+execute 'highlight  diffLine  gui=NONE guifg=' . g:glx_c_magenta
+execute 'highlight  diffSubname  gui=NONE guifg=' . g:glx_c_white
+execute 'highlight  diffIndexLine  gui=NONE guifg=' . g:glx_c_gray
+execute 'highlight  gitcommitHeader  gui=underline,bold guifg=' . g:glx_c_dkwhite
+execute 'highlight  gitcommitBranch  gui=NONE guifg=' . g:glx_c_magenta
+execute 'highlight  gitcommitSummary  gui=italic guifg=' . g:glx_c_white
+highlight! link diffFile diffIndexLine
+highlight! link diffComment diffIndexLine
+
+augroup DIFF_TEXT
+    autocmd!
+    autocmd BufRead,BufNewFile *.diff setlocal winhighlight=Normal:glxLtGrayFG
+    autocmd BufRead,BufNewFile COMMIT_EDITMSG setlocal winhighlight=Comment:glxGrayFG
+augroup END
 
 " Selected lines in visual mode
 " execute 'highlight!  Visual         gui=inverse guibg=' . g:glx_c_black
-execute 'highlight! Visual         guibg=' . g:glx_c_dkgray
-
+execute 'highlight! Visual         guibg=' . g:glx_c_lualine_bg
 execute 'highlight  IncSearch      gui=bold guifg=#101010 guibg=' . g:glx_c_yellow
 execute 'highlight  Search         gui=bold guifg=#101010 guibg=' . g:glx_c_ltgreen
 execute 'highlight  HlSearchLens   gui=italic guibg=' . g:glx_c_black . ' guifg=' . g:glx_c_dkgray
@@ -169,12 +212,12 @@ execute 'highlight  HlSearchLens   gui=italic guibg=' . g:glx_c_black . ' guifg=
 " columns.
 highlight  LineNr       guifg=#525252
 highlight  Comment      guifg=#4a6fa5
-highlight  ColorColumn  guibg=#101010
+execute 'highlight  ColorColumn  guibg=' . g:glx_c_ltblack
 highlight! link FoldColumn ColorColumn
 " highlight  SpellCap
-" highlight  StatusLine
-" highlight  StatusLineNC
-" highlight  VertSplit
+highlight  StatusLine  gui=NONE
+highlight  StatusLineNC gui=NONE
+execute 'highlight  VertSplit guifg=' . g:glx_c_gray
 highlight  SignColumn guibg=NONE
 
 " Lualine colors
@@ -266,20 +309,26 @@ execute 'highlight! LspSagaDiagnosticBorder guibg=NONE guifg=' . g:glx_c_gray
 execute 'highlight! LspSagaDiagnosticHeader guibg=NONE guifg=' . g:glx_c_gray
 execute 'highlight! LspSagaLightBulb guibg=NONE guifg=' . g:glx_c_yellow
 execute 'highlight! DiagnosticUnderlineHint gui=undercurl guisp=' . g:glx_c_white . ' guifg=' . g:glx_c_gray . ' guibg=' . g:glx_c_ltblack
+execute 'highlight! TroubleSource guifg=' . g:glx_c_gray
+execute 'highlight! TroubleCount guifg=' . g:glx_c_lualine_fg
+execute 'highlight! TroubleLocation guifg=' . g:glx_c_gray
+execute 'highlight! TroubleCode guifg=' . g:glx_c_ltgray . ' gui=italic'
+execute 'highlight! TroubleFoldIcon guifg=' . g:glx_c_lualine_fg
 highlight! DiagnosticUnderlineError gui=undercurl
 highlight  DiagnosticError          guifg=#ef4335
-highlight  DiagnosticVirtualTextError guifg=#525252
+execute 'highlight  DiagnosticVirtualTextError guifg=' . g:glx_c_dkgray
+highlight! link DiagnosticVirtualTextWarn DiagnosticVirtualTextError
 
 
 " execute 'highlight OverLengthOn gui=underline guisp=' . g:glx_c_gray
 " highlight OverLengthOff gui=NONE
 
-function! OverLength()
-    call matchadd('OverLength', '\%81v.\+')
-endfunction
-highlight link OverLength OverLengthOn
+" function! OverLength()
+"     call matchadd('OverLength', '\%81v.\+')
+" endfunction
+" highlight link OverLength OverLengthOn
 
-augroup OverLengthGroup
-    autocmd!
-    autocmd BufRead,BufNewFile * :call OverLength()
-augroup END
+" augroup OverLengthGroup
+"     autocmd!
+"     autocmd BufRead,BufNewFile * :call OverLength()
+" augroup END
