@@ -147,6 +147,30 @@ execute 'highlight  glxYellowBG    guibg=' . g:glx_c_yellow
 execute 'highlight  glxGreenBG     guibg=' . g:glx_c_green
 highlight  glxLtGreenBG   guibg=#98be65
 
+" LSP/Lspsaga colors
+execute 'highlight! ColInLineDiagnostic guibg=NONE guifg=' . g:glx_c_gray
+execute 'highlight! LspSagaDiagnosticSource guibg=NONE guifg=' . g:glx_c_gray
+execute 'highlight! LspInfoTip guibg=NONE guifg=' . g:glx_c_gray
+execute 'highlight! LspSagaDiagnosticBorder guibg=NONE guifg=' . g:glx_c_gray
+execute 'highlight! LspSagaDiagnosticHeader guibg=NONE guifg=' . g:glx_c_gray
+execute 'highlight! LspSagaLightBulb guibg=NONE guifg=' . g:glx_c_ltyellow
+execute 'highlight! DiagnosticUnderlineHint cterm=NONE gui=undercurl guisp=' . g:glx_c_gray . ' guifg=' . g:glx_c_gray . ' guibg=' . g:glx_c_ltblack
+execute 'highlight! DiagnosticUnderlineError cterm=NONE guifg=NONE gui=undercurl guisp=' . g:glx_c_red
+execute 'highlight! DiagnosticUnderlineWarn cterm=NONE guifg=NONE gui=undercurl guisp=' . g:glx_c_gray
+execute 'highlight! DiagnosticUnderlineInfo cterm=NONE guifg=NONE gui=undercurl guisp=' . g:glx_c_gray
+execute 'highlight! DiagnosticInfo guifg=' . g:glx_c_ltblue
+execute 'highlight! DiagnosticHint guifg=' . g:glx_c_lualine_fg
+execute 'highlight! TroubleSource guifg=' . g:glx_c_gray
+execute 'highlight! TroubleCount guifg=' . g:glx_c_lualine_fg
+execute 'highlight! TroubleLocation guifg=' . g:glx_c_gray
+execute 'highlight! TroubleCode guifg=' . g:glx_c_ltgray . ' gui=italic'
+execute 'highlight! TroubleFoldIcon guifg=' . g:glx_c_lualine_fg
+execute 'highlight  DiagnosticError          guifg=' . g:glx_c_red
+execute 'highlight  DiagnosticWarn          guifg=' . g:glx_c_yellow
+execute 'highlight  DiagnosticVirtualTextError guifg=' . g:glx_c_dkgray
+highlight! link DiagnosticVirtualTextWarn DiagnosticVirtualTextError
+highlight! link DiagnosticVirtualTextInfo DiagnosticVirtualTextErrorn
+highlight! link DiagnosticVirtualTextHint DiagnosticVirtualTextErrorn
 
 execute 'highlight  NormalFloat    guifg=' . g:glx_c_lualine_fg . ' guibg=' . g:glx_c_black . ' blend=80'
 execute 'highlight  WarningMsg     guifg=' . g:glx_c_red
@@ -166,31 +190,30 @@ execute 'highlight! HealthSuccess  gui=bold guifg=' . g:glx_c_ltgreen
 execute 'highlight  PlugName       gui=bold guifg=' . g:glx_c_ltgreen
 execute 'highlight! PlugH2       gui=bold guifg=' . g:glx_c_ltgreen
 execute 'highlight! PlugBracket       guifg=' . g:glx_c_dkwhite
-highlight  PlugNumber     guifg=#f5cc52  gui=bold
+execute 'highlight  PlugNumber     gui=bold guifg=' . g:glx_c_ltyellow
 execute 'highlight  PlugMessage    gui=bold guifg=' . g:glx_c_lualine_fg
 highlight  PlugPlus       guifg=#bfbfbf  gui=NONE
 highlight  PlugDash       guifg=#bfbfbf  gui=NONE
 highlight  PlugStar       guifg=#bfbfbf  gui=NONE
-highlight  PlugUpdate     gui=bold guifg=#fc8a25  gui=bold
+execute 'highlight  PlugUpdate     gui=bold guifg=' . g:glx_c_orange
 execute 'highlight  PlugUpdate     gui=bold guifg=' . g:glx_c_orange
 execute 'highlight  Plug1          gui=bold guifg=' . g:glx_c_lualine_fg
 execute 'highlight  Plug2          guifg=' . g:glx_c_gray
-highlight  WarningMsg     guifg=#f5cc52  gui=bold
+execute 'highlight  WarningMsg     gui=bold guifg=' . g:glx_c_yellow
 highlight  Conceal        guifg=#bfbfbf  guibg=#bfbfbf
 execute 'highlight  MatchParen     gui=bold,undercurl guifg=#ffffff  guibg=bg  guisp=' . g:glx_c_green
 execute 'highlight  NvimInternalError guibg=' . g:glx_c_red
 execute 'highlight  Constant       guifg=' . g:glx_c_red
-highlight  Special        guifg=#fc8a25
+execute 'highlight  Special        guifg=' . g:glx_c_orange
 execute 'highlight  Identifier     guifg=' . g:glx_c_ltcyan
 execute 'highlight  Underlined     gui=underline guifg=' . g:glx_c_magenta
-" highlight  Statement      guifg=#fc8a25
 execute 'highlight  Statement      guifg=' . g:glx_c_orange
 execute 'highlight  PreProc        guifg=' . g:glx_c_magenta
-highlight  Type           guifg=#1ea50b
+execute 'highlight  Type           gui=NONE guifg=' . g:glx_c_green
 highlight  Ignore         guifg=#eaeaea
-highlight  NonText        guifg=#323232
-highlight  Todo           gui=bold guifg=#323232  guibg=#f5cc52
-highlight  Conceal        guifg=#323232 guibg=#323232
+highlight!  NonText       guifg=#323232
+execute 'highlight  Todo           gui=bold guifg=' . g:glx_c_dkgray . ' guibg=' . g:glx_c_ltyellow
+execute 'highlight  Conceal        guifg=' . g:glx_c_dkgray . ' guibg=' . g:glx_c_dkgray
 highlight  ModeMsg        gui=bold
 highlight  TermCursor     guibg=#000000 guifg=#ffffff gui=NONE
 highlight  Highlight      gui=reverse
@@ -213,28 +236,6 @@ execute 'highlight  IndentBlanklineContextChar  gui=bold guifg=' . g:glx_c_dkblu
 "
 " Tabs
 "
-
-" ??
-" execute 'highlight! BufferLineTab guifg=' . g:glx_c_gray . ' guibg=' . g:glx_c_lualine_dkbg
-
-" Main tabline background. ??
-" execute 'highlight! BufferLineFill guibg=black guifg=' . g:glx_c_gray
-
-" execute 'highlight! BufferLineSeparator guibg=' . g:glx_c_lualine_dkbg
-
-" ??
-" execute 'highlight! BufferLineBufferVisible guifg=' . g:glx_c_gray
-
-" Inactive tabs.
-" execute 'highlight! BufferLineBackground guifg=' . g:glx_c_gray . ' guibg=' . g:glx_c_lualine_dkbg
-
-" Active tab.
-" execute 'highlight! BufferLineBufferSelected gui=bold guifg=' . g:glx_c_lualine_fg . ' guibg=' . g:glx_c_lualine_bg
-
-" Active tab indicator.
-" execute 'highlight! BufferLineIndicatorSelected guifg=' . g:glx_c_ltgreen . ' guibg=' . g:glx_c_lualine_bg
-
-
 execute 'highlight! TabLine        gui=none  guifg=' . g:glx_c_gray . '  guibg=' . g:glx_c_lualine_bg
 execute 'highlight! TabLineSel     gui=none  guifg=' . g:glx_c_lualine_fg . '  guibg=' . g:glx_c_black
 execute 'highlight! TabLineFill    gui=none  guibg=' . g:glx_c_lualine_bg . '  guibg=' . g:glx_c_ltgreen
@@ -270,7 +271,7 @@ execute 'highlight  HlSearchLens   gui=italic guibg=' . g:glx_c_black . ' guifg=
 " Dim line numbers, comments, color columns, the status line, splits and sign
 " columns.
 highlight  LineNr       guifg=#525252
-execute 'highlight  Comment      guifg=' . g:glx_c_dkblue
+execute 'highlight  Comment     guisp=NONE guifg=' . g:glx_c_dkblue
 execute 'highlight  ColorColumn  guibg=' . g:glx_c_ltblack
 highlight! link FoldColumn ColorColumn
 " highlight  SpellCap
@@ -280,13 +281,13 @@ execute 'highlight  VertSplit guifg=' . g:glx_c_gray
 highlight  SignColumn guibg=NONE
 
 " Lualine colors
-highlight!  lualine_c_filename_normal guifg=#98be65
+execute 'highlight!  lualine_c_filename_normal guifg=' . g:glx_c_green
 execute 'highlight!  lualine_c_filename_insert guifg=' . g:glx_c_red
-highlight!  lualine_c_filename_visual guifg=#4a6fa5
-highlight!  lualine_c_filename_replace guifg=#fc8a25
+execute 'highlight!  lualine_c_filename_visual guifg=' . g:glx_c_blue
+execute 'highlight!  lualine_c_filename_replace guifg=' . g:glx_c_orange
 execute 'highlight!  lualine_c_filename_command guifg=' . g:glx_c_magenta
-highlight!  lualine_c_filename_terminal guifg=#80e8ff
-highlight!  lualine_c_filename_inactive guifg=#eaeaea
+execute 'highlight!  lualine_c_filename_terminal guifg=' . g:glx_c_ltcyan
+execute 'highlight!  lualine_c_filename_inactive guifg=' . g:glx_c_white
 
 "
 " links
@@ -358,41 +359,3 @@ highlight! link CmpItemKindProperty Identifier
 
 " cmp struct
 highlight! link CmpItemKindStruct Statment
-
-" LSP/Lspsaga colors
-execute 'highlight! ColInLineDiagnostic guibg=NONE guifg=' . g:glx_c_gray
-execute 'highlight! LspSagaDiagnosticSource guibg=NONE guifg=' . g:glx_c_gray
-execute 'highlight! LspInfoTip guibg=NONE guifg=' . g:glx_c_gray
-execute 'highlight! LspSagaDiagnosticBorder guibg=NONE guifg=' . g:glx_c_gray
-execute 'highlight! LspSagaDiagnosticHeader guibg=NONE guifg=' . g:glx_c_gray
-execute 'highlight! LspSagaLightBulb guibg=NONE guifg=' . g:glx_c_ltyellow
-execute 'highlight! DiagnosticUnderlineHint gui=undercurl guisp=' . g:glx_c_gray . ' guifg=' . g:glx_c_gray . ' guibg=' . g:glx_c_ltblack
-execute 'highlight! DiagnosticUnderlineError gui=undercurl guisp=' . g:glx_c_red
-execute 'highlight! DiagnosticUnderlineWarn gui=undercurl guisp=' . g:glx_c_gray
-execute 'highlight! DiagnosticUnderlineInfo gui=undercurl guisp=' . g:glx_c_gray
-execute 'highlight! DiagnosticInfo guifg=' . g:glx_c_ltblue
-execute 'highlight! DiagnosticHint guifg=' . g:glx_c_lualine_fg
-execute 'highlight! TroubleSource guifg=' . g:glx_c_gray
-execute 'highlight! TroubleCount guifg=' . g:glx_c_lualine_fg
-execute 'highlight! TroubleLocation guifg=' . g:glx_c_gray
-execute 'highlight! TroubleCode guifg=' . g:glx_c_ltgray . ' gui=italic'
-execute 'highlight! TroubleFoldIcon guifg=' . g:glx_c_lualine_fg
-highlight! DiagnosticUnderlineError gui=undercurl
-execute 'highlight  DiagnosticError          guifg=' . g:glx_c_red
-execute 'highlight  DiagnosticWarn          guifg=' . g:glx_c_yellow
-execute 'highlight  DiagnosticVirtualTextError guifg=' . g:glx_c_dkgray
-highlight! link DiagnosticVirtualTextWarn DiagnosticVirtualTextError
-
-
-" execute 'highlight OverLengthOn gui=underline guisp=' . g:glx_c_gray
-" highlight OverLengthOff gui=NONE
-
-" function! OverLength()
-"     call matchadd('OverLength', '\%81v.\+')
-" endfunction
-" highlight link OverLength OverLengthOn
-
-" augroup OverLengthGroup
-"     autocmd!
-"     autocmd BufRead,BufNewFile * :call OverLength()
-" augroup END
