@@ -99,7 +99,7 @@ function! GlxColorizeVariables()
 endfunction
 
 augroup glxColorizeVariables
-    autocmd BufRead,BufEnter,BufNewFile * :call GlxColorizeVariables()
+    autocmd BufRead,BufEnter * :call GlxColorizeVariables()
 augroup END
 
 " Theme FG colors
@@ -154,10 +154,23 @@ execute 'highlight! LspInfoTip guibg=NONE guifg=' . g:glx_c_gray
 execute 'highlight! LspSagaDiagnosticBorder guibg=NONE guifg=' . g:glx_c_gray
 execute 'highlight! LspSagaDiagnosticHeader guibg=NONE guifg=' . g:glx_c_gray
 execute 'highlight! LspSagaLightBulb guibg=NONE guifg=' . g:glx_c_ltyellow
-execute 'highlight! DiagnosticUnderlineHint cterm=NONE gui=undercurl guisp=' . g:glx_c_gray . ' guifg=' . g:glx_c_gray . ' guibg=' . g:glx_c_ltblack
-execute 'highlight! DiagnosticUnderlineError cterm=NONE guifg=NONE gui=undercurl guisp=' . g:glx_c_red
-execute 'highlight! DiagnosticUnderlineWarn cterm=NONE guifg=NONE gui=undercurl guisp=' . g:glx_c_gray
-execute 'highlight! DiagnosticUnderlineInfo cterm=NONE guifg=NONE gui=undercurl guisp=' . g:glx_c_gray
+
+function! GlxAddDiagUndercurl()
+    execute 'highlight! DiagnosticUnderlineHint cterm=NONE gui=undercurl guisp=' . g:glx_c_gray . ' guifg=' . g:glx_c_gray . ' guibg=' . g:glx_c_ltblack
+    execute 'highlight! DiagnosticUnderlineError cterm=NONE guifg=NONE gui=undercurl guisp=' . g:glx_c_red
+    execute 'highlight! DiagnosticUnderlineWarn cterm=NONE guifg=NONE gui=undercurl guisp=' . g:glx_c_gray
+    execute 'highlight! DiagnosticUnderlineInfo cterm=NONE guifg=NONE gui=undercurl guisp=' . g:glx_c_gray
+    " execute 'highlight! DiagnosticMsg guibg=' . g:glx_c_black . ' guifg=' . g:glx_c_lualine_fg
+    " execute 'highlight! DiagnosticMsgIcon guibg=' . g:glx_c_black . ' guifg=' . g:glx_c_lualine_fg
+    " execute 'highlight! DiagnosticText guibg=' . g:glx_c_black . ' guifg=' . g:glx_c_lualine_fg
+    " execute 'highlight! DiagnosticActionTitle guibg=NONE guifg=' . g:glx_c_lualine_fg
+    " execute 'highlight! SagaBorder guibg=' . g:glx_c_black
+endfunction
+
+augroup glxColorizeVariables
+    autocmd BufRead,BufEnter * :call GlxAddDiagUndercurl()
+augroup END
+
 execute 'highlight! DiagnosticInfo guifg=' . g:glx_c_ltblue
 execute 'highlight! DiagnosticHint guifg=' . g:glx_c_lualine_fg
 execute 'highlight! TroubleSource guifg=' . g:glx_c_gray
