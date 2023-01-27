@@ -5,7 +5,9 @@ if exists('syntax_on')
 endif
 
 set background=dark
-let colors_name = 'glandix'
+
+let g:colors_name = 'glandix'
+
 let g:glx_c_dkblack    = '#000000'
 let g:glx_c_black      = '#121212'
 let g:glx_c_ltblack    = '#262626'
@@ -181,6 +183,9 @@ execute 'highlight! TroubleFoldIcon guifg=' . g:glx_c_lualine_fg
 execute 'highlight  DiagnosticError          guifg=' . g:glx_c_red
 execute 'highlight  DiagnosticWarn          guifg=' . g:glx_c_yellow
 execute 'highlight  DiagnosticVirtualTextError guifg=' . g:glx_c_dkgray
+execute 'highlight  SagaBorder guifg=' . g:glx_c_lualine_fg
+execute 'highlight  DiagnosticSource guifg=' . g:glx_c_gray
+execute 'highlight  DiagnosticPos guifg=' . g:glx_c_gray
 highlight! link DiagnosticVirtualTextWarn DiagnosticVirtualTextError
 highlight! link DiagnosticVirtualTextInfo DiagnosticVirtualTextErrorn
 highlight! link DiagnosticVirtualTextHint DiagnosticVirtualTextErrorn
@@ -264,7 +269,8 @@ execute 'highlight  diffSubname  gui=NONE guifg=' . g:glx_c_white
 execute 'highlight  diffIndexLine  gui=NONE guifg=' . g:glx_c_gray
 execute 'highlight  gitcommitHeader  gui=underline,bold guifg=' . g:glx_c_dkwhite
 execute 'highlight  gitcommitBranch  gui=NONE guifg=' . g:glx_c_magenta
-execute 'highlight  gitcommitSummary  gui=italic guifg=' . g:glx_c_white
+execute 'highlight  gitcommitSummary  gui=italic,bold guifg=' . g:glx_c_white
+execute 'highlight  gitcommitOverflow gui=italic,bold guifg=' . g:glx_c_orange
 highlight! link diffFile diffIndexLine
 highlight! link diffComment diffIndexLine
 
