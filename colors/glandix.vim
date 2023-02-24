@@ -24,16 +24,21 @@ let g:glx_c_ltblue     = '#98c1ff'
 " let g:glx_c_ltblue     = '#5b8dd8'
 let g:glx_c_blue       = '#3879d8'
 let g:glx_c_dkblue     = '#4a6fa5'
+let g:glx_c_purple     = '#7b4ead'
+let g:glx_c_ltpurple   = '#986bc9'
 let g:glx_c_lavendar   = '#a9a1e1'
 let g:glx_c_magenta    = '#de73f7'
+let g:glx_c_pink       = '#ff6ac1'
 let g:glx_c_ltred      = '#ec5f67'
 let g:glx_c_red        = '#dc513f'
 let g:glx_c_dkorange   = '#e76535'
 let g:glx_c_orange     = '#fc8a25'
 let g:glx_c_yellow     = '#ffa500'
 let g:glx_c_ltyellow   = '#f5cc52'
-let g:glx_c_ltgreen    = '#9fbc6f'
-let g:glx_c_green      = '#4fa331'
+let g:glx_c_ltgreen    = '#8ac77f'
+let g:glx_c_green      = '#65c254'
+" let g:glx_c_green      = '#53a644'
+" let g:glx_c_green      = '#54b043'
 let g:glx_c_dkgreen    = '#157108'
 
 let g:glx_c_lualine_bg = '#202328'
@@ -56,6 +61,7 @@ execute 'highlight glxColorsLtBlack guifg=#ffffff guibg=' . g:glx_c_ltblack
 execute 'highlight glxColorsDkBlack guifg=#ffffff guibg=' . g:glx_c_dkblack
 execute 'highlight glxColorsGray guifg=' . g:glx_c_ltwhite . ' guibg=' . g:glx_c_gray
 execute 'highlight glxColorsMagenta guifg=' . g:glx_c_black . ' guibg=' . g:glx_c_magenta
+execute 'highlight glxColorsPink guifg=' . g:glx_c_black . ' guibg=' . g:glx_c_pink
 execute 'highlight glxColorsLtBlue guifg=' . g:glx_c_black . ' guibg=' . g:glx_c_ltblue
 execute 'highlight glxColorsLtRed guifg=' . g:glx_c_black . ' guibg=' . g:glx_c_ltred
 execute 'highlight glxColorsLtGreen guifg=' . g:glx_c_black . ' guibg=' . g:glx_c_ltgreen
@@ -69,6 +75,8 @@ execute 'highlight glxColorsLtWhite guifg=' . g:glx_c_black . ' guibg=' . g:glx_
 execute 'highlight glxColorsWhite guifg=' . g:glx_c_black . ' guibg=' . g:glx_c_white
 execute 'highlight glxColorsDkWhite guifg=' . g:glx_c_black . ' guibg=' . g:glx_c_dkwhite
 execute 'highlight glxColorsLavendar guifg=' . g:glx_c_black . ' guibg=' . g:glx_c_lavendar
+execute 'highlight glxColorsLtPurple guifg=' . g:glx_c_black . ' guibg=' . g:glx_c_ltpurple
+execute 'highlight glxColorsPurple guifg=' . g:glx_c_black . ' guibg=' . g:glx_c_purple
 execute 'highlight glxColorsLtGray guifg=' . g:glx_c_black . ' guibg=' . g:glx_c_ltgray
 
 function! GlxColorizeVariables()
@@ -88,10 +96,13 @@ function! GlxColorizeVariables()
     call matchadd('glxColorsLtCyan', 'glx\(_\)\?c\(_\)\?ltcyan\c')
     call matchadd('glxColorsCyan', 'glx\(_\)\?c\(_\)\?cyan\c')
     call matchadd('glxColorsMagenta', 'glx\(_\)\?c\(_\)\?magenta\c')
+    call matchadd('glxColorsPink', 'glx\(_\)\?c\(_\)\?pink\c')
     call matchadd('glxColorsWhite', 'glx\(_\)\?c\(_\)\?white\c')
     call matchadd('glxColorsDkWhite', 'glx\(_\)\?c\(_\)\?dkwhite\c')
     call matchadd('glxColorsLtWhite', 'glx\(_\)\?c\(_\)\?ltwhite\c')
     call matchadd('glxColorsLavendar', 'glx\(_\)\?c\(_\)\?lavendar\c')
+    call matchadd('glxColorsLtPurple', 'glx\(_\)\?c\(_\)\?ltpurple\c')
+    call matchadd('glxColorsPurple', 'glx\(_\)\?c\(_\)\?purple\c')
     call matchadd('glxColorsGray', 'glx\(_\)\?c\(_\)\?gray\c')
     call matchadd('glxColorsLtGray', 'glx\(_\)\?c\(_\)\?ltgray\c')
     call matchadd('glxColorsDkGray', 'glx\(_\)\?c\(_\)\?dkgray\c')
@@ -221,13 +232,18 @@ execute 'highlight  WarningMsg     gui=bold guifg=' . g:glx_c_yellow
 highlight  Conceal        guifg=#bfbfbf  guibg=#bfbfbf
 execute 'highlight  MatchParen     gui=bold,undercurl guifg=#ffffff  guibg=bg  guisp=' . g:glx_c_green
 execute 'highlight  NvimInternalError guibg=' . g:glx_c_red
-execute 'highlight  Constant       guifg=' . g:glx_c_red
-execute 'highlight  Special        guifg=' . g:glx_c_orange
+execute 'highlight  Constant       guifg=' . g:glx_c_ltred
+" execute 'highlight  String         guifg=' . g:glx_c_lavendar
+execute 'highlight  String         guifg=' . g:glx_c_ltpurple
+execute 'highlight  Special        guifg=' . g:glx_c_ltgray
+execute 'highlight  Function       gui=italic guifg=' . g:glx_c_pink
 execute 'highlight  Identifier     guifg=' . g:glx_c_ltcyan
-execute 'highlight  Underlined     gui=underline guifg=' . g:glx_c_magenta
-execute 'highlight  Statement      guifg=' . g:glx_c_orange
-execute 'highlight  PreProc        guifg=' . g:glx_c_magenta
-execute 'highlight  Type           gui=NONE guifg=' . g:glx_c_green
+execute 'highlight  StorageClass   guifg=' . g:glx_c_ltgreen
+execute 'highlight  Underlined     gui=underline guifg=' . g:glx_c_blue
+execute 'highlight  Statement      guifg=' . g:glx_c_ltyellow . ' gui=bold'
+execute 'highlight  Operator       guifg=' . g:glx_c_white . ' gui=NONE'
+execute 'highlight  PreProc        gui=bold guifg=' . g:glx_c_pink
+execute 'highlight  Type           gui=bold guifg=' . g:glx_c_green
 highlight  Ignore         guifg=#eaeaea
 highlight!  NonText       guifg=#323232
 execute 'highlight  Todo           gui=bold guifg=' . g:glx_c_dkgray . ' guibg=' . g:glx_c_ltyellow
@@ -322,9 +338,34 @@ highlight  link DimFzfFgPlus PmenuSel
 highlight  link DimFzfBgPlus PmenuSel
 highlight  link DimFzfInfo   Comment
 
-highlight! link phpSuperglobals Identifier
-highlight! link phpFunction Identifier
-highlight! link phpFunctions Identifier
+function! PhpSyntaxOverride()
+    highlight! link phpSuperglobals Identifier
+    execute 'highlight! phpFunction gui=italic guifg=' . g:glx_c_pink
+    execute 'highlight! phpFunctions gui=NONE guifg=' . g:glx_c_dkwhite
+    execute 'highlight! phpInclude gui=NONE guifg=' . g:glx_c_ltyellow
+    execute 'highlight! phpNullValue gui=italic guifg=' . g:glx_c_ltred
+    execute 'highlight! delimiter guifg=' . g:glx_c_orange
+    execute 'highlight! phpUseClass gui=italic guifg=' . g:glx_c_dkwhite
+    " syn match phpParentOnly "[\[\]]" contained containedin=phpParent
+    " execute 'highlight phpParentOnly guifg=' . g:glx_c_ltyellow
+    execute 'highlight phpMemberSelector gui=italic guifg=' . g:glx_c_yellow
+    execute 'highlight phpVarSelector gui=none guifg=' . g:glx_c_ltyellow
+    highlight phpMethod gui=italic
+    highlight! link phpClass StorageClass
+    execute 'highlight!  phpUseNamespaceSeparator guifg=' . g:glx_c_gray
+    highlight! link phpClassNamespaceSeparator phpUseNamespaceSeparator
+endfunction
+
+augroup phpSyntaxOverride
+    autocmd!
+    autocmd FileType php call PhpSyntaxOverride()
+augroup END
+
+execute 'highlight! htmlArg gui=NONE guifg=' . g:glx_c_ltgreen
+execute 'highlight! htmlTag gui=NONE guifg=' . g:glx_c_ltcyan
+highlight! link htmlTag htmlEndTag
+
+
 
 " highlight  DimFzfHl
 " highlight  DimFzfPrompt
@@ -353,8 +394,8 @@ execute 'highlight CmpItemAbbrMatch gui=underline guifg=' . g:glx_c_dkorange
 highlight! link CmpItemAbbrMatchFuzzy CmpItemAbbrMatch
 
 " cmp function
-highlight! link CmpItemKindFunction PreProc
-highlight! link CmpItemKindMethod PreProc
+highlight! link CmpItemKindFunction Function
+highlight! link CmpItemKindMethod Function
 
 " cmp ghost text
 execute 'highlight! CmpGhostText gui=italic guifg=' . g:glx_c_gray
